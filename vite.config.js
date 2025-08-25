@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    
-  ],
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      // Force using standard JS version
+      useNative: false
+    }
+  }
 })
